@@ -1,0 +1,14 @@
+{
+  "name": "sentry",
+  "version": "1.0.0",
+  "description": "Amazon price watcher",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hayden",
+  "license": "ISC",
+  "dependencies": {
+    "node-mailer": "^0.1.1"
+  }
+}
