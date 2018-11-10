@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ts-node/register test/**/*.test.ts"
   },
   "author": "Hayden",
   "license": "ISC",
@@ -14,5 +14,14 @@
     "express": "^4.16.4",
     "node-mailer": "^0.1.1",
     "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/sinon": "^5.0.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1",
+    "ts-node": "^7.0.1"
   }
 }
