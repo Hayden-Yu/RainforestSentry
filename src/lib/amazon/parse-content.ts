@@ -2,8 +2,13 @@ import { default as cheerio } from 'cheerio';
 
 export const parseContent = (content: string) => {
   const $ = cheerio.load(content);
-  
-  const priceTxt = $('#priceblock_ourprice').text();
+  let onDeal = true;
+
+  let priceTxt = $('#priceblock_dealprice').text();
+  if (!priceTxt) {
+    onDeal = false;
+    priceTxt = $('#priceblock_ourprice').text();
+  }
 
   let price;
   let range;
@@ -22,5 +27,6 @@ export const parseContent = (content: string) => {
     name: $('#titleSection').text().trim(),
     price: price,
     range: range,
+    deal: onDeal,
   }
 } 
