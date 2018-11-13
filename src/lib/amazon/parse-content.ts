@@ -1,6 +1,7 @@
 import { default as cheerio } from 'cheerio';
+import { product } from '.';
 
-export const parseContent = (content: string) => {
+export const parseContent = (content: string): product => {
   const $ = cheerio.load(content);
   let onDeal = true;
 
