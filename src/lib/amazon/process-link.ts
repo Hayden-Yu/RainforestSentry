@@ -1,7 +1,7 @@
 
 // unique code in product link appears to follow a /dp/ sub-path, e.g. https://www.amazon.ca/Kindle-Oasis-reader-High-Resolution-Waterproof/dp/B06XDK92KS/
 export const processLink = (link: string): string => {
-  let path = link.split('/');
+  let path = link.split('?')[0].split('/');
   let dp = false;
   for (let el of path) {
     if (dp) {
