@@ -4,6 +4,7 @@
   "description": "Amazon price watcher",
   "main": "index.ts",
   "scripts": {
+    "start": "npm run build && node build/app.js",
     "build": "tsc",
     "test": "mocha --require ts-node/register test/*.test.ts test/**/*.test.ts"
   },
