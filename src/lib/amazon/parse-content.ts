@@ -25,7 +25,7 @@ export const parseContent = (content: string): product => {
   }
   
   return {
-    name: $('#titleSection').text().trim(),
+    name: $('#titleSection').text().trim().replace(/\s+/g, ' '),
     price: price,
     range: range,
     deal: onDeal,
