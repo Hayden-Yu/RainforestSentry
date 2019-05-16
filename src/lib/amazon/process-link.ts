@@ -7,7 +7,8 @@ export const processLink = (link: string): string => {
     if (dp) {
       return el;
     }
-    if (el === 'dp') {
+    if (el === 'dp'
+      || el === 'product') {
       dp = true;
     }
   }
