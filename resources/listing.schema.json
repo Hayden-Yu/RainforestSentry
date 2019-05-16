@@ -1,0 +1,21 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://rainforest-sentry/listing.json",
+  "type": "object",
+  "title": "Listing Request",
+  "required": [
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "Amazon product link",
+      "examples": [
+        "https://www.amazon.ca/gp/product/B07QXTFR73/ref=s9_acsd_hps_bw_c_x_1_w?pf_rd_m=A1IM4EOPHS76S7&pf_rd_s=merchandised-search-6&pf_rd_r=6YE2MCFPMD6PNHGXKKRY&pf_rd_t=101&pf_rd_p=63cc7fe7-e095-4579-bc3e-6b3e4867f8a2&pf_rd_i=916514"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
