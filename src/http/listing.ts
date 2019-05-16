@@ -1,26 +1,16 @@
 import { Router } from "express";
-import getListing from "../lib/amazon";
-import ajv from 'ajv';
+import { getListing } from "../lib/amazon";
 import listingSchema from '../../resources/listing.schema.json';
+import { schemaValidator } from "../util/schema-validator";
 
 export const listing = Router();
-const ajv_ = new ajv();
 
 listing.post('/listing', (req, res, next) => {
-  const listingValidation = ajv_.compile(listingSchema);
-  if (!listingValidation(req.body)) {
-    const resBody = {
-      errors: <any[]>[],
-    };
-    if (listingValidation.errors && listingValidation.errors.length) {
-      resBody.errors = listingValidation.errors.map(e => {
-        return {
-          params: e.params,
-          message: e.message,
-        };
-      });
-    }
-    return res.status(400).send(resBody);
+  const validation = schemaValidator(listingSchema, req.body);
+  if (validation !== true) {
+    return res.status(400).send({
+      errors: validation && validation.length ? validation : [],
+    });
   }
   return getListing(req.body.url)
       .then(result => res.send(result));

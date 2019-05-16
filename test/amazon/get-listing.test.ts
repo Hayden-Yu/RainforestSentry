@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { default as fs } from 'fs';
-import getListing from '../../src/lib/amazon';
+import { getListing } from '../../src/lib/amazon';
 import nock = require('nock');
 
 const testPage1 = fs.readFileSync('test/resource/test-amazon-kindle.html').toString();

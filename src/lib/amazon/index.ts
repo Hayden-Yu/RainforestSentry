@@ -26,4 +26,4 @@ const getListing = async (url: string): Promise<listing> => {
   }
 }
 
-export default getListing;
+export {getListing, processLink};

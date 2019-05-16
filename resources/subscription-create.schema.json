@@ -1,0 +1,44 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://rainforest-sentry/subscription-create.json",
+  "type": "object",
+  "title": "Subscription Request",
+  "required": [
+    "url",
+    "email",
+    "schedule"
+  ],
+  "properties": {
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "Amazon product link",
+      "default": "",
+      "examples": [
+        "https://www.amazon.ca/dp/B0792JYXZK/ref=ods_gw_ha_H1_d_dt_playgame_tall_ca_051219_en?pf_rd_p=c457ad8e-3596-4434-967f-d7ab4b5972e2&pf_rd_r=Y8DS8JRFJ8V1651ARNFC"
+      ],
+      "pattern": "^(https?://)?(www\\.)?amazon\\.\\w+/.+$"
+    },
+    "email": {
+      "$id": "#/properties/email",
+      "type": "string",
+      "title": "Subscriber email",
+      "default": "",
+      "examples": [
+        "hayden@example.com"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "schedule": {
+      "$id": "#/properties/schedule",
+      "type": "string",
+      "title": "Cron syntax schedule in UTC",
+      "default": "",
+      "examples": [
+        "* * 15 * * 5"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

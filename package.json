@@ -19,6 +19,7 @@
     "@types/winston": "^2.4.4",
     "ajv": "^6.10.0",
     "cheerio": "^1.0.0-rc.2",
+    "cron-parser": "^2.11.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "fake-useragent": "^1.0.1",
